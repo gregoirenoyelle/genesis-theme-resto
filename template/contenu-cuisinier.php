@@ -11,7 +11,8 @@ function gob_contenu_fiche_cuisinier() {
 
 	// Mise en mémoire du fichier qui affiche le HTML
 	ob_start();
-	include_once( get_stylesheet_directory() . '/view/view-cuisinier.php');
+	// Appel du fichier view. Attention, utiliser include et non include_once dans une boucle.
+	include( get_stylesheet_directory() . '/view/view-cuisinier.php' );
 	// Affichage du HTML et nettoyage de la mémoire
 	echo ob_get_clean();
 
